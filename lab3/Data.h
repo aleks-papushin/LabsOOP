@@ -23,5 +23,5 @@ public:
 	Data & operator=(const Data & data);
 	//Data & operator=(Data && data);
 
-	//friend ostream & operator<<(ostream & os, const Data & data);
+	friend ostream & operator<<(ostream & os, const Data & data);
 };

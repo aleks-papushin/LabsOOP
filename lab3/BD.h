@@ -19,6 +19,7 @@ public:
 
 	//BD & operator=(const BD & bd);
 	//BD & operator=(BD && bd);
+	
 
 	Data & operator[](const char * key);
 
@@ -28,5 +29,5 @@ protected:
 	void IncreaseCapacity(); 
 	void AddEmployee(const char * key);
 
-	//friend ostream & operator<<(ostream & os, const BD & bd);
+	friend ostream & operator<<(ostream & os, const BD & bd);
 };

@@ -16,3 +16,8 @@ bool Pair::operator==(const char * key) const
 {
 	return strcmp(this->m_key.GetString(), key) == 0;
 }
+
+ostream & operator<<(ostream & os, const Pair & pair)
+{
+	return os << "Last name: " << pair.m_key << pair.m_data;
+}

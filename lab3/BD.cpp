@@ -29,8 +29,9 @@ Data & BD::operator[](const char * key)
 	}
 
 	AddEmployee(key);
+	m_count++;
 
-	return m_pBase[m_count]->m_data;
+	return m_pBase[m_count - 1]->m_data;
 }
 
 void BD::IncreaseCapacity()
@@ -59,5 +60,14 @@ void BD::IncreaseCapacity()
 void BD::AddEmployee(const char * key)
 {
 	m_pBase[m_count]->m_key = key;
-	m_count++;
+}
+
+ostream & operator<<(ostream & os, const BD & bd)
+{
+	os << "Base contents:" << endl;
+	for (size_t i = 0; i < bd.m_count; i++)
+	{
+		os << *(bd.m_pBase[i]) << endl;
+	}
+	return os;
 }

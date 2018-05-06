@@ -22,5 +22,5 @@ public:
 	bool operator==(const char * key) const;
 
 	friend class BD;
-	//friend ostream & operator<<(ostream & os, const Pair & pair);
+	friend ostream & operator<<(ostream & os, const Pair & pair);
 };

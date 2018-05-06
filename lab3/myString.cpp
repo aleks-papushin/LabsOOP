@@ -141,6 +141,6 @@ MyString ConcatStrings(char * chArr, ...)
 
 ostream & operator<<(ostream & os, const MyString & s)
 {
-	os << "contents: " << "\"" << s.GetString() << "\"";
+	os << s.GetString();
 	return os;
 }

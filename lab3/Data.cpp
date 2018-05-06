@@ -17,3 +17,15 @@ Data & Data::operator=(const Data & data)
 	
 	return *this;
 }
+
+ostream & operator<<(ostream & os, const Data & data)
+{
+	os << " gender: ";
+	os << (data.m_gender == Data::UNDEF ? "undef" : 
+		  (data.m_gender == Data::MALE  ? "male" : 
+										  "female"));
+	os << " age: " << data.m_age;
+	os << " job: " << (sizeof(data.m_job) == 0 ? "undef" : data.m_job.GetString());
+	os << " salary: " << data.m_salary;
+	return os;
+}

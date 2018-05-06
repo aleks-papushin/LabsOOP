@@ -123,9 +123,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		Pair testpair(test, Data());
 		bool check = (testpair == test); // testpair.operator==(test);
 
-		bd["Ivanov"] = Data(Data::MALE);	//если Ivanov-а в базе еще нет, то
+		Data td(Data::FEMALE, 20, MyString("architect"), 5000);
+		Pair testPair(MyString("Ivanova"), td);
+
+		bd["Ivanov"] = Data(Data::MALE, 30, MyString("engeneer"), 6000);	//если Ivanov-а в базе еще нет, то
 						//добавление, если уже есть, то замена его реквизитов
-		//std::cout<<bd;	//вывод информации обо всех сотрудниках
+		bd["Ivanova"] = Data(Data::FEMALE, 20, MyString("architect"), 5000);
+		cout << bd;	//вывод информации обо всех сотрудниках
 		//ј также:
 		// BD bdnew = bd;
 		//
